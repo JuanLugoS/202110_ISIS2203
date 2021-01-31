@@ -1,3 +1,13 @@
+"""
+ * Universidad de Los Andes
+ * ISIS 2203 - Infraestructura Computacional
+ * Ejercicio de laboratorio
+ * 29 de enero de 2021
+ *
+ * @author Juan Lugo Sánchez
+ * jd.lugo@uniandes.edu.co
+ * 201913094
+"""
 import threading
 import time
 
