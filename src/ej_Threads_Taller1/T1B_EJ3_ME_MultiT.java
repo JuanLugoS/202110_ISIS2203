@@ -2,6 +2,8 @@ package ej_Threads_Taller1;
 
 import java.util.concurrent.*;
 
+import utilities.Maximo;
+
 public class T1B_EJ3_ME_MultiT extends Thread{
 	
 	private final static int INT_MAX = 105345;
@@ -10,7 +12,7 @@ public class T1B_EJ3_ME_MultiT extends Thread{
 	
 	private static int[][] matriz = new int[DIM][DIM];
 	
-	private int mayor = -1;
+	private static Maximo mayor = new Maximo();
 	
 	private int mayorFila = -1;
 	
@@ -47,24 +49,25 @@ public class T1B_EJ3_ME_MultiT extends Thread{
 	public void run() {
 		for (int i = 0; i < DIM; i++) {
 			if (this.mayorFila<matriz[this.fila][i]) {
+				
 				this.mayorFila = matriz[this.fila][i];
 			}
 		}
-		if (this.mayorFila > mayor) {
+		if (this.mayorFila > mayor.darMaximo()) {
 			try {
 				Thread.sleep(250);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			
-			mayor = this.mayorFila;
+			mayor.anotar(this.mayorFila);
 			String warn = String.format("=========== Nuevo maximo encontrado ========== \n"
 									  + "ID Thread: %d - Maximo local actual: %d - Maximo global: %d \n"
-									  + "\n", this.idThread, mayor, this.mayorFila);
+									  + "\n", this.idThread, mayor.darMaximo(), this.mayorFila);
 			System.out.println(warn);
 		}
 		
-		String msg = String.format("ID Thread: %d - Maximo local: %d - Maximo global: %d", this.idThread, this.mayorFila, mayor );
+		String msg = String.format("ID Thread: %d - Maximo local: %d - Maximo global: %d", this.idThread, this.mayorFila, mayor.darMaximo() );
 		System.out.println(msg);
 	}
 	

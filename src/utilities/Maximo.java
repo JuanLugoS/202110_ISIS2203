@@ -3,7 +3,7 @@ package utilities;
 public class Maximo {
 	private int maximo = 0;
 
-	public int darMaximo() {
+	public synchronized int darMaximo() {
 		return maximo;
 	}
 

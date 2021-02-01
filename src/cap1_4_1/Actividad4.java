@@ -12,6 +12,8 @@ public class Actividad4 extends Thread {
 
 	public void run() {
 		oMax.anotar(num);
+		System.out.println("acaba t"+num);
+		System.out.println("El máximo es: " + oMax.darMaximo());	
 	}
 
 	public static void main(String[] args) {
