@@ -13,14 +13,14 @@ public class Actividad4 extends Thread {
 	public void run() {
 		oMax.anotar(num);
 		System.out.println("acaba t"+num);
-		System.out.println("El máximo es: " + oMax.darMaximo());	
+		System.out.println("El nuevo máximo es: " + oMax.darMaximo());	
 	}
 
 	public static void main(String[] args) {
 		
 			for (int i = 0; i < 10; i++)
 				new Actividad4(i).start();
-			System.out.println("El máximo es: " + oMax.darMaximo());	
+			System.out.println("-----El máximo es: " + oMax.darMaximo());	
 			
 	}
 }
