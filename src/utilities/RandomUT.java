@@ -22,6 +22,11 @@ public class RandomUT {
 	
 
 	
+	/**
+	 * @param low
+	 * @param high
+	 * @return
+	 */
 	public int randomNumber(Integer low, Integer high) {
 		Random r = new Random();
 		return r.nextInt(high-low) + low;
