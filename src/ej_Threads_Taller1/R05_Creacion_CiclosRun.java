@@ -12,9 +12,9 @@ public class R05_Creacion_CiclosRun implements Runnable{
 	@Override
 	public void run() {
 		try {
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < 3; i++) {
 				System.out.println(name+" valor: "+i);
-				Thread.sleep(50);
+				Thread.sleep(500);
 			}
 		} catch (Exception e) {}
 	}
